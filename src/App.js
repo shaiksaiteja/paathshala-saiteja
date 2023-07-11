@@ -1,15 +1,20 @@
-import logo from './logo.svg';
-import React from "react" ;
 import './App.css';
+import Footer from './components/Footer';
+import NavBar from './components/NavBar';
+import Blog from './pages/Blog/Blog';
+import Home from './pages/Home/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>hello</h1>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
